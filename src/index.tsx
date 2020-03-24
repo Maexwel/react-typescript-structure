@@ -1,17 +1,25 @@
+import 'core-js';
+import 'react-app-polyfill/stable';
+import 'react-app-polyfill/ie11';
+import 'typeface-roboto';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { ThemeProvider } from '@material-ui/styles'; // Material-ui Theme provider
+import { theme } from './theme';
+import { Provider } from 'react-redux'; // Redux store provider
+import storeFactory from './store/index'; // Redux store factory
+import { Routes } from './router';
 import * as serviceWorker from './serviceWorker';
+require('dotenv').config(); // .env handle
+
+const store = storeFactory(); // Create base redux store
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
