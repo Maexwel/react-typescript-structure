@@ -64,28 +64,6 @@ export const HomePage = () => {
                 }]}
                 onSelectionChange={(rows: any) => alert(JSON.stringify(rows))}
             />
-            <Paper>
-                <TextField onChange={(e) => { console.log(e.target.value) }} label="test" />
-                <ComboBox
-                    label="ComboBox example"
-                    options={[
-                        {
-                            label: "Label1",
-                            value: "1234"
-                        },
-                        {
-                            label: "Label2",
-                            value: "2"
-                        },
-                        {
-                            label: "Label3",
-                            value: "5"
-                        },
-                    ]}
-                    multi
-                    update={(e) => console.log(e)}
-                />
-            </Paper>
         </div>
     );
 };
