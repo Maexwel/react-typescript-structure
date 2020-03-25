@@ -5,15 +5,19 @@ import { TextField as MaterialTextField, TextFieldProps as MaterialTextFieldProp
 type TextFieldProps = {
     inputProps?: MaterialTextFieldProps,
     onChange: (event: any) => void | undefined,
-    value: string,
+    value?: string,
+    label: string,
+    name?: string,
 };
 
 // Override of default Material-ui Textfield
-export const TextField = ({ onChange, value, inputProps = { variant: "outlined" } }: TextFieldProps) => {
+export const TextField = ({ onChange, name, label, value, inputProps = { variant: "outlined" } }: TextFieldProps) => {
     return (
         <MaterialTextField
             {...inputProps}
+            name={name}
             value={value}
-            onChange={onChange} />
+            onChange={onChange}
+            label={label} />
     );
 };

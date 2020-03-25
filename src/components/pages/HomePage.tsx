@@ -1,7 +1,8 @@
 import React from 'react';
 import { IconButton } from '../ui/buttons';
 import { DataTable } from '../ui/table';
-import { Icon, Grid } from '@material-ui/core';
+import { Icon, Grid, Paper } from '@material-ui/core';
+import { TextField, ComboBox } from '../ui/forms';
 
 // Home page of the application
 export const HomePage = () => {
@@ -55,8 +56,36 @@ export const HomePage = () => {
                     selection: true,
                     exportButton: true,
                 }}
+                actions={[{
+                    icon: "add",
+                    isFreeAction: true,
+                    tooltip: "Ajouter une nouvelle rue",
+                    onClick: (e) => {  }
+                }]}
                 onSelectionChange={(rows: any) => alert(JSON.stringify(rows))}
             />
+            <Paper>
+                <TextField onChange={(e) => { console.log(e.target.value) }} label="test" />
+                <ComboBox
+                    label="ComboBox example"
+                    options={[
+                        {
+                            label: "Label1",
+                            value: "1234"
+                        },
+                        {
+                            label: "Label2",
+                            value: "2"
+                        },
+                        {
+                            label: "Label3",
+                            value: "5"
+                        },
+                    ]}
+                    multi
+                    update={(e) => console.log(e)}
+                />
+            </Paper>
         </div>
     );
 };

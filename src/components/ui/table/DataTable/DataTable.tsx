@@ -28,6 +28,7 @@ type ActionProps = {
     tooltip?: string,
     icon: string,
     onClick: (evt: Event, data: any) => void | undefined,
+    isFreeAction:boolean,
 };
 
 // Global props
