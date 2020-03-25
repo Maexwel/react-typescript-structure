@@ -1,8 +1,7 @@
 import React from 'react';
 import { IconButton } from '../ui/buttons';
 import { DataTable } from '../ui/table';
-import { Icon, Grid, Paper } from '@material-ui/core';
-import { TextField, ComboBox } from '../ui/forms';
+import { Icon, Grid } from '@material-ui/core';
 
 // Home page of the application
 export const HomePage = () => {
